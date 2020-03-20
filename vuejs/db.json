@@ -1,49 +1,49 @@
-
   {
-  "data": [
-  {
-    "items":{
-      "item_id": 1,
-      "item_name": "ASSEMBLER SCHOOL",
+  "items": [
+    {
+      "id": 1, 
+      "item_name": "ASSEMBLER SCHOOL", 
       "item_code": "CODE001", 
       "item_description": "Description 1", 
-      "url_logo": "http://logo"
+      "url_logo": "http://logo", 
+      "price_current": "5.25" 
     }, 
-    "price":{
-      "price_id": 1,
-      "price_current": "5.25",
-      "item_id": "1", 
-      "date": "19/03/2020"
-    }
-  },
-  {
-    "items":{
-      "item_id": 2,
+    {
+      "id": 2, 
       "item_name": "HOLDED",
       "item_code": "CODE002", 
       "item_description": "Description 2", 
-      "url_logo": "http://logo"
-    }, 
-    "price":{
-      "price_id": 2,
-      "price_current": "8.40",
-      "item_id": "2", 
-      "date": "19/03/2020"
-    }
-  },
-  {
-    "items":{
-      "item_id": 3,
+      "url_logo": "http://logo", 
+      "price_current": "8.40"
+    },
+    {
+      "id": 3,
       "item_name": "GOLD",
       "item_code": "CODE003", 
       "item_description": "Description 3", 
-      "url_logo": "http://logo"
-    }, 
-    "price":{
-      "price_id": 3,
-      "price_current": "8.20",
+      "url_logo": "http://logo", 
+      "price_current": "8.20"
+    }
+  ], 
+
+  "prices":[
+    {
+      "id": 1,
+      "price": "5.25",
+      "item_id": "1", 
+      "date": "19/03/2020"
+    },
+    {
+      "id": 2,
+      "price": "8.40",
+      "item_id": "2", 
+      "date": "19/03/2020"
+    },
+    {
+      "id": 3,
+      "price": "8.20",
       "item_id": "3", 
       "date": "18/03/2020"
     }
-  }
-]}
+  ]
+}
