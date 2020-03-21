@@ -6,11 +6,10 @@
 import EventBus from '../js/event-bus'
 
 export default {
-    name: "details",
-    // Here i should received
+    name: "Details",
     mounted () {
         EventBus.$on('searching', (message) =>{
-            console.log(message); //Este message tien info?
+            console.log(message); 
         });
     }
 }

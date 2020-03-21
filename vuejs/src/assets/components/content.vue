@@ -22,7 +22,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name: "App",
+  name: "Content",
   data() {
     return {
       items: []

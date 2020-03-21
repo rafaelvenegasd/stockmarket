@@ -11,7 +11,7 @@
 <script>
 import EventBus from '../js/event-bus'
 export default {
-    name: "navbar",
+    name: "Navbar",
     data() {
       return {
           message: ''
