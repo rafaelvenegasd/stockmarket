@@ -1,3 +1,4 @@
+
 const axios = require('axios');
 
 let items = [];
@@ -9,15 +10,14 @@ export function getDetails(id){
         txt.name = res.data.item_name;
         txt.price = res.data.price_current;
         items.push(txt.name, txt.price);
-        return items;
+
+        document.getElementById('details').innerHTML = items;
     })
     .catch(function (error) {
         // handle error
         console.log(error);
     })
 }
-
-
 
 // export function getDetails(id){
 //     console.log("Getting Content From API...");        
