@@ -8,8 +8,6 @@
     <Details></Details>
     <Footer></Footer>
   </div>
-  
-
 </template>
 
 <script>
@@ -18,7 +16,6 @@ import Details from '../components/details.vue'
 import Aside from '../components/aside.vue'
 import Content from '../components/content.vue'
 import Footer from '../components/footer.vue'
-
 
 export default {
   name: "App",
@@ -31,7 +28,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

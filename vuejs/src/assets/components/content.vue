@@ -11,7 +11,7 @@
         <tr>
           <td>{{item.item_name}}</td>
           <td>{{item.price_current}}</td>
-          <td><button class="btn btn-success">Detail</button></td>
+          <td><button :id=item.id class="btn btn-success" v-on:click="getDetails()" >Detail</button></td>
         </tr>
       </tbody>
     </table>
@@ -21,11 +21,12 @@
 
 <script>
 import axios from 'axios'
+import EventBus from '../js/event-bus'
 export default {
   name: "Content",
   data() {
     return {
-      items: []
+      items: [], id: ''
     };
   },
   mounted() {
@@ -50,6 +51,11 @@ export default {
           });
         })
         .catch(err => console.log(err));
+    }, 
+
+    getDetails(){
+      EventBus.$emit('details', this.id);
+      console.log(this.id)
     }
   }
 }
