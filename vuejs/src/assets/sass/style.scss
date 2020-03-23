@@ -133,4 +133,23 @@
   }
 
 
+  //pagination 
+
+  .paginate-links{
+    // width:100%;
+    list-style: none;
+    text-align: center;
+  }
+
+  .paginate-links li {
+    display: inline;
+    background-color:rgb(15, 41, 63);
+    color:white;
+    padding:0.5rem;
+    margin-left:0.3rem;
+    margin-right: 0.3rem;
+    cursor:pointer;
+    border-radius: 3px;
+  }
+
 
