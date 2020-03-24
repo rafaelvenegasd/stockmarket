@@ -2,7 +2,7 @@ let myChart = document.getElementById('myChart').getContext('2d');
 
 
 // GET REQUEST
-function getTodos() {
+// function getTodos() {
     // axios({
     //   method: 'get',
     //   url: 'https://pokeapi.co/api/v2/pokemon/ditto/'
@@ -10,12 +10,12 @@ function getTodos() {
     // .then(res => console.log(res))
     // .catch(err => console.error(err)); 
     
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon/ditto/")
-      .then(res => console.log(res))
-      .catch(err => console.error(err));
+//     axios
+//       .get("https://pokeapi.co/api/v2/pokemon/ditto/")
+//       .then(res => console.log(res))
+//       .catch(err => console.error(err));
 
-};
+// };
 
 // Show data from API
 

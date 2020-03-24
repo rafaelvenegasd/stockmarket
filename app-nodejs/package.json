@@ -2,14 +2,16 @@
   "name": "app-nodejs",
   "version": "1.0.0",
   "description": "A app with nodejs and express to get Laravel API",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/"
+    "dev": "nodemon src/",
+    "json:server": "json-server --watch db.json" 
   },
   "author": "Marcelo G4sp4r",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express-handlebars": "^3.1.0",
+    "json-server": "^0.16.1"
   }
 }

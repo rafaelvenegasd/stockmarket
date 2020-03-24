@@ -8,10 +8,10 @@ const path = require('path');
 // Connect server
 const app = express();
 
-const server = app.listen(3000, listening);
+const server = app.listen(3333, listening);
 
 function listening() {
-    console.log('Server listening in port 3000');
+    console.log('Server listening in port 3333');
 }
 
 // app.use(express.static('src'));
@@ -48,12 +48,11 @@ app.set('view engine', '.hbs');
 
 // Routes 
 app.use('/', require('./controllers/dashboard'));
-// app.use(require('./routes/authentication'));
 app.use('/about', require('./controllers/about'));
-// app.use('/skills', require('./routes/skills'));
-// app.use('/links', require('./routes/links'));
-// app.use('/experience', require('./routes/experience'));
-// app.use('/contact', require('./routes/service'));
+app.use('/products', require('./controllers/products'));
+app.use('/top', require('./controllers/top'));
+app.use('/search', require('./controllers/search'));
+app.use('/contact', require('./controllers/contact'));
 
 
 // Public
