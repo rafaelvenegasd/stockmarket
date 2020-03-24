@@ -5,7 +5,11 @@
       <Content></Content>
       <Aside></Aside>
     </div>
+    <div>
+    <Chart></Chart>
     <Details></Details>
+    </div>
+    
     <Footer></Footer>
   </div>
 </template>
@@ -15,6 +19,7 @@ import Navbar from '../components/navbar.vue'
 import Details from '../components/details.vue'
 import Aside from '../components/aside.vue'
 import Content from '../components/content.vue'
+import Chart from '../components/chartjs.vue'
 import Footer from '../components/footer.vue'
 
 export default {
@@ -24,6 +29,7 @@ export default {
     Details,
     Aside,
     Content, 
+    Chart,
     Footer
   }
 }

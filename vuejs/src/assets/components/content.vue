@@ -12,7 +12,7 @@
           <tr v-for="item in paginated('items')" :key="item.id">
             <td>{{item.item_name}}</td>
             <td>{{item.price_current}}</td>
-            <td><button :id=item.id class="btn btn-success" v-on:click="getDetails()" >Detail</button></td>
+            <td><button :id=item.id class="btn btn-success" v-on:click="getDetails(item.id)" >Detail</button></td>
           </tr>
         </tbody>
       </paginate>
@@ -22,11 +22,10 @@
   </div>
 </template>
 
-
 <script>
 import axios from 'axios'
 import EventBus from '../js/event-bus'
-import {getContentFromApi, items} from '../js/axios-service'
+import {getContentFromApi} from '../js/axios-service'
 export default {
   name: "Content",
   data() {
@@ -43,29 +42,13 @@ export default {
       else{
         this.items = data;
       }
-      
     });
-  },
-  methods: {
-  //   getContentFromApi() {
-  //     console.log("Getting Content From API...");
-  //     axios
-  //       .get(
-  //         `http://localhost:3000/items`
-  //       )
-  //       .then(res => {
-  //         this.items = [...this.items, ...res.data];
-  //         res.data.forEach(item => {
-  //           var txt = new Text();
-  //           txt.name = item.item_name;
-  //           txt.price = item.price_current;
-  //           txt.onload = () => {
-  //             this.load.push(txt.name, txt.price);
-  //           };
-  //         });
-  //       })
-  //       .catch(err => console.log(err));
-  //   }, 
+  }, 
+  methods:{
+    getDetails(id)
+    {
+      EventBus.$emit('searching', id);
+    }
   }
 }
 </script>

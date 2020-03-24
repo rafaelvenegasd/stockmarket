@@ -21,7 +21,7 @@
       "item_name": "GOLD",
       "item_code": "CODE003", 
       "item_description": "El oro es un elemento químico cuyo número atómico es 79. Está ubicado en el grupo 11 de la tabla periódica. Es un metal precioso blando de color amarillo. Su símbolo es Au (del latín aurum, ‘brillante amanecer’).", 
-      "url_logo": "https://cdn2.vectorstock.com/i/1000x1000/24/61/earth-globe-round-gold-logo-vector-14982461.jpg", 
+      "url_logo": "https://image.freepik.com/foto-gratis/macro-mineral-oro-roca-piedra-preciosa_37753-143.jpg", 
       "price_current": "0.69"
     },
     {
@@ -36,7 +36,7 @@
       "id": 5,
       "item_name": "REPSOL",
       "item_code": "REPSOL", 
-      "item_description": "Description 5", 
+      "item_description": "Repsol es una multinacional energética y petroquímica española, con sede social en Madrid y Barcelona, que fue fundada en octubre de 1987.​", 
       "url_logo": "https://contenidos.infobolsa.es/img/logos/96/M_REP.png", 
       "price_current": "6,3780"
     },

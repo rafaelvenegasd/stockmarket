@@ -10,16 +10,28 @@
     </div>
     <div class="container">
         <p><b>Seguimiento</b></p>
-        <p>1</p>
-        <p>2</p>
+        <div v-for="item in favoritesItems" :key="item.id">
+          <span><b>{{ item }}</b></span>
+        </div>
     </div>
 
   </div>
 </template>
 
 <script>
+import EventBus from '../js/event-bus'
 export default {
-    name: "Aside"
+    name: "Aside",
+    data() {
+      return {
+        favoritesItems: []
+      };
+    },
+    mounted() { 
+      EventBus.$on('addFavorites', data =>{
+        this.favoritesItems.push(data);
+      })
+    }
 }
 </script>
 

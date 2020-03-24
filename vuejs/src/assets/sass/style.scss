@@ -24,6 +24,7 @@
 
 .aside{
     width: 30%;
+    background-color: $grey;
 }
 
 .content{
@@ -37,6 +38,10 @@
 
 .font-bold{
     font-weight: bold;
+}
+
+.logo{
+  width: 20%;
 }
 
 .black-box{
@@ -63,6 +68,11 @@
 
 .white{
     color: $white;
+}
+
+.details{
+  width: 40%;
+  margin: 5%;
 }
 
 //Modal
