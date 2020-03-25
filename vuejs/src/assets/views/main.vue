@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <div class="d-flex">
+    <div class="d-flex mt-2 mb-2">
       <div class="mr-4 mt-4 container">
         <Content></Content>
         <div>

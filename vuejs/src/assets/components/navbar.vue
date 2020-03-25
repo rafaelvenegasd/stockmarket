@@ -1,6 +1,6 @@
 <template>
   <nav class=" navbar navbar-dark bg-blue">
-      <a class="navbar-brand">StockMarket</a>
+      <a class="navbar-brand" href="/">StockMarket</a>
       <div>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" v-model="message" name="search" id="search" placeholder="Search">

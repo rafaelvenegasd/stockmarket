@@ -1,9 +1,12 @@
 <template>
   <div class="aside">
-    <div class="list-group mb-4" id="list-tab" role="tablist">
+    <div class="list-group list-group-flush mb-4" id="list-tab" role="tablist">
       <li class="list-group-item active"><b>Top 5</b></li>
       <div  v-for="item in top5" :key="item.id">
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" :v-on:click="getDetails(1)" role="tab" aria-controls="profile">{{item.item_name}}</a>
+        <li class="list-group-item d-flex justify-content-between align-items-center " id="list-profile-list" data-toggle="list" role="tab" >
+          {{item.item_name}}
+          <span class="badge badge-primary badge-pill pl-1 pr-1">{{item.price_current}}</span>
+        </li>
       </div>
     </div>
     <ul class="container list-group">
