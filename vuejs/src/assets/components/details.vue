@@ -6,7 +6,7 @@
                 <img :src="item.url_logo" alt="" class="logo">
             </figure>
             <p>{{ item.item_description }}</p>
-            <button class="btn btn-outline-light" v-on:click="addFavorites(item.item_name)">⭐</button>
+            <button class="btn-primary btn-sm" v-on:click="addFavorites(item.item_name)">Add to favorites ⭐</button>
         </div>
     </div>
 </template>
@@ -45,7 +45,6 @@ export default {
             if (this.position != -1) { this.favorites.splice(this.position, 1); // if the element exist, remove the element
             } else { this.favorites.push(item); } // else add to Favorites
             localStorage.setItem("favorites", JSON.stringify(this.favorites));
-            this.favorites = localStorage.getItem("favorites")
             EventBus.$emit('favorites', this.favorites);
         }
     }         

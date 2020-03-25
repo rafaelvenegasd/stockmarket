@@ -14,7 +14,6 @@ export function getDetails(id, cb){
 }
 
 export function getContentFromApi(cb){
-  console.log("Getting Content From API...");
   axios.get(`http://localhost:3000/items/`)
   .then(function (res) {
       cb(null, res.data);

@@ -1,10 +1,11 @@
 <template>
-  <nav class="navbar bg-light">
+  <nav class=" navbar navbar-dark bg-blue">
       <a class="navbar-brand">StockMarket</a>
       <div>
-        <input v-model="message" type="text" name="search" id="search" placeholder="Item">
-        <input v-model="id" type="text" name="search_id" value="5" >
-        <button class="btn btn-primary" v-on:click="search()">Search</button> 
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" v-model="message" name="search" id="search" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="search()">Go</button> 
+        </form>
       </div>
   </nav>
 </template>

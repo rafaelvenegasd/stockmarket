@@ -1,46 +1,57 @@
 <template>
   <div class="aside">
-      <div class="container">
-        <p><b>Top 5</b></p>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
+    <div class="list-group mb-4" id="list-tab" role="tablist">
+      <li class="list-group-item active"><b>Top 5</b></li>
+      <div  v-for="item in top5" :key="item.id">
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" :v-on:click="getDetails(1)" role="tab" aria-controls="profile">{{item.item_name}}</a>
+      </div>
     </div>
-    <div class="container">
-        <p><b>Seguimiento</b></p>
+    <ul class="container list-group">
+        <li class="list-group-item active bg-blue"><b>Following</b></li>
         <div v-for="item in favoritesItems" :key="item.id">
-          <ul>
-            <li>{{ item }}</li>
-          </ul>
-          
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item }}
+            <span class="badge badge-primary badge-pill">⭐</span> 
+          </li>
         </div>
-    </div>
-
+    </ul>
   </div>
 </template>
 
 <script>
 import EventBus from '../js/event-bus'
+import {getContentFromApi} from '../js/axios-service'
 export default {
     name: "Aside",
     data() {
       return {
-        favoritesItems: []
+        favoritesItems: [], top5: []
       };
     },
     mounted() { 
+      this.favoritesItems = localStorage.getItem("favorites");
+      this.favoritesItems = JSON.parse(this.favoritesItems);
       EventBus.$on('favorites', data =>{
          this.favoritesItems = data
          this.favoritesItems = JSON.parse(this.favoritesItems);
       });
-      // this.favoritesItems = localStorage.getItem("favorites");
-      // this.favoritesItems = JSON.parse(this.favoritesItems);
+      getContentFromApi((err, data) =>{
+        if(err){
+          console.error(err)
+        } 
+        else{
+          for (let i = 0; i < 5; i++) {
+            const element = data[i];
+            this.top5.push(element)
+          }
+        }
+      });
+    }, 
+    methods:{
+      getDetails(id)
+      {
+        EventBus.$emit('searching', id);
+      }
     }
 }
 </script>
-
-<style>
-
-</style>

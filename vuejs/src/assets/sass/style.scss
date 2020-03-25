@@ -24,11 +24,11 @@
 
 .aside{
     width: 30%;
-    background-color: $grey;
+    margin: auto;
 }
 
 .content{
-  width: 70%;
+  padding-right: 5rem;
 }
 
 .center{
@@ -71,8 +71,11 @@
 }
 
 .details{
-  width: 40%;
   margin: 5%;
+}
+
+.btn-primary{
+  color: $blue;
 }
 
 //Modal
@@ -153,13 +156,17 @@
 
   .paginate-links li {
     display: inline;
-    background-color:rgb(15, 41, 63);
+    background-color: $blue;
     color:white;
     padding:0.5rem;
     margin-left:0.3rem;
     margin-right: 0.3rem;
     cursor:pointer;
     border-radius: 3px;
+  }
+
+  .bg-blue{
+    background-color: $blue;
   }
 
 

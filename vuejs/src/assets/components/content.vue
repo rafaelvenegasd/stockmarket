@@ -1,7 +1,7 @@
 <template>
-  <div class="row no-gutters d-flex justify-content-center container content">
-    <table class="table">
-      <paginate ref="paginator" name = "items" :list = "items" :per = "5">
+  <div>
+    <paginate ref="paginator" name = "items" :list = "items" :per = "5">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">Name</th>
@@ -12,13 +12,14 @@
           <tr v-for="item in paginated('items')" :key="item.id">
             <td>{{item.item_name}}</td>
             <td>{{item.price_current}}</td>
-            <td><button :id=item.id class="btn btn-success" v-on:click="getDetails(item.id)" >Detail</button></td>
+            <td><button :id=item.id class="btn btn-success btn-sm" v-on:click="getDetails(item.id)" >Detail</button></td>
           </tr>
         </tbody>
+      </table>
       </paginate>
       <paginate-links for="items" :show-step-links="true" :simple="{ prev: 'Anterior', next: 'Siguiente' }">
       </paginate-links>
-    </table>
+    
   </div>
 </template>
 

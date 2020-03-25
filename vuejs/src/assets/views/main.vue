@@ -2,12 +2,14 @@
   <div>
     <Navbar></Navbar>
     <div class="d-flex">
-      <Content></Content>
+      <div class="mr-4 mt-4 container">
+        <Content></Content>
+        <div>
+          <Chart></Chart>
+          <Details></Details>
+        </div>
+      </div>
       <Aside></Aside>
-    </div>
-    <div>
-    <Chart></Chart>
-    <Details></Details>
     </div>
     
     <Footer></Footer>
