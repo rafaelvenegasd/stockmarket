@@ -11,7 +11,10 @@
     <div class="container">
         <p><b>Seguimiento</b></p>
         <div v-for="item in favoritesItems" :key="item.id">
-          <span><b>{{ item }}</b></span>
+          <ul>
+            <li>{{ item }}</li>
+          </ul>
+          
         </div>
     </div>
 
@@ -28,9 +31,12 @@ export default {
       };
     },
     mounted() { 
-      EventBus.$on('addFavorites', data =>{
-        this.favoritesItems.push(data);
-      })
+      EventBus.$on('favorites', data =>{
+         this.favoritesItems = data
+         this.favoritesItems = JSON.parse(this.favoritesItems);
+      });
+      // this.favoritesItems = localStorage.getItem("favorites");
+      // this.favoritesItems = JSON.parse(this.favoritesItems);
     }
 }
 </script>

@@ -18,7 +18,9 @@ export default {
     name: "Details", 
     data() {
         return {
-        items: [], favorites: [], position: null
+            items: [], 
+            favorites: [], 
+            position: null, 
         };
     },
     mounted() {
@@ -35,11 +37,16 @@ export default {
     }, 
     methods:{
         addFavorites(item){
-            EventBus.$emit('addFavorites', item);
             this.favorites = localStorage.getItem("favorites") || "[]";
             this.favorites = JSON.parse(this.favorites);
-            this.favorites.push(item);
+            this.position = this.favorites.findIndex(function(e) {
+                return e == item; 
+            });          
+            if (this.position != -1) { this.favorites.splice(this.position, 1); // if the element exist, remove the element
+            } else { this.favorites.push(item); } // else add to Favorites
             localStorage.setItem("favorites", JSON.stringify(this.favorites));
+            this.favorites = localStorage.getItem("favorites")
+            EventBus.$emit('favorites', this.favorites);
         }
     }         
 }
