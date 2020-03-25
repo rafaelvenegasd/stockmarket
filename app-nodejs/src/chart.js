@@ -1,30 +1,17 @@
 let myChart = document.getElementById('myChart').getContext('2d');
-
+var content = document.getElementById('content');
 
 // GET REQUEST
-// function getTodos() {
-    // axios({
-    //   method: 'get',
-    //   url: 'https://pokeapi.co/api/v2/pokemon/ditto/'
-    // })
-    // .then(res => console.log(res))
-    // .catch(err => console.error(err)); 
-    
-//     axios
-//       .get("https://pokeapi.co/api/v2/pokemon/ditto/")
-//       .then(res => console.log(res))
-//       .catch(err => console.error(err));
+function getTodos() {
+    axios
+      .get("http://localhost:3000/companies")
+      .then(res => res.data.forEach(function(todo,i){
+            content.innerHTML += `<h1>${todo.name}</h1>` 
+      }))
+      .catch(err => console.error(err))      
+};
 
-// };
-
-// Show data from API
-
-// function showOutput(res) {
-//     var content = document.getElementById('content');
-
-//     content.innerHTML = `<li>${res}</li>`
-// };
-
+getTodos();
 
 
 // Global Options

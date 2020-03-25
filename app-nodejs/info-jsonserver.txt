@@ -1,0 +1,23 @@
+GET SINGLE COMPANY
+http://localhost:3000/companies/1
+
+GET ALL PRICES OF A COMPANY
+http://localhost:3000/companies/1/prices 
+
+FILTER COMPANIES BY NAME
+http://localhost:3000/companies?name=Google
+http://localhost:3000/companies?name=Google&name=Apple
+
+PAGINATION & LIMIT
+http://localhost:3000/companies?_page=1&_limit=3 
+
+SORTING
+http://localhost:3000/companies?_sort=name&_order=asc
+http://localhost:3000/companies?_sort=id&_order=desc
+
+COMPANIES PRICE RANGE
+http://localhost:3000/prices?price_gte=500
+http://localhost:3000/prices?price_gte=1000&price_lte=3000
+
+FULL TEXT SEARCH
+http://localhost:3000/companies?q=Apple
