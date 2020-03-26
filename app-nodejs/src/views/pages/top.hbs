@@ -9,40 +9,14 @@
     </tr>
   </thead>
   <tbody>
+  {{#each companies}}
     <tr>
-      <th scope="row">1</th>
-      <td>Google</td>
-      <td>Google LLC is an American multinational technology company... </td>
-      <td>€88000,00</td>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.title}}</td>
+      <td>€{{this.value}}</td>
       <td><a href="/products">Details</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Facebook</td>
-      <td>Facebook is an American online social media and social networking service...</td>
-      <td>€76000,00</td>
-      <td><a href="/products">Details</a></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Apple</td>
-      <td>Apple Inc. is an American multinational technology company...</td>
-      <td>€64000,00</td>
-      <td><a href="/products">Details</a></td>
-    </tr>
-        <tr>
-      <th scope="row">4</th>
-      <td>Oracle</td>
-      <td>Oracle Corporation is an American multinational computer technology corporation...</td>
-      <td>€52000,00</td>
-      <td><a href="/products">Details</a></td>
-    </tr>
-        <tr>
-      <th scope="row">5</th>
-      <td>Microsoft</td>
-      <td>Microsoft Corporation is an American multinational technology company...</td>
-      <td>€40000,00</td>
-      <td><a href="/products">Details</a></td>
-    </tr>
+  {{/each}}
   </tbody>
 </table>

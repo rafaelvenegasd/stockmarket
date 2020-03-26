@@ -54,6 +54,5 @@ app.use('/top', require('./controllers/top'));
 app.use('/search', require('./controllers/search'));
 app.use('/contact', require('./controllers/contact'));
 
-
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
