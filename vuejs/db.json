@@ -1,0 +1,91 @@
+  {
+  "items": [
+    {
+      "id": 1, 
+      "item_name": "ASSEMBLER SCHOOL", 
+      "item_code": "CODE001", 
+      "item_description": "Assembler School of Software Engineering entrena a los mejores ingenieros de software en un programa gratuito de 9 meses basado en proyectos", 
+      "url_logo": "https://pbs.twimg.com/profile_images/1102950919208091649/JfI1z1hW.jpg", 
+      "price_current": "5.2560" 
+    }, 
+    {
+      "id": 2, 
+      "item_name": "HOLDED",
+      "item_code": "CODE002", 
+      "item_description": "Holded es un ERP en la nube que te permite gestionar las ventas, finanzas, operaciones y recursos humanos en una sola plataforma.", 
+      "url_logo": "https://www.holded.com/content/assets/media/corp/holdedtipo3@2x.png", 
+      "price_current": "8.4020"
+    },
+    {
+      "id": 3,
+      "item_name": "GOLD",
+      "item_code": "CODE003", 
+      "item_description": "El oro es un elemento químico cuyo número atómico es 79. Está ubicado en el grupo 11 de la tabla periódica. Es un metal precioso blando de color amarillo. Su símbolo es Au (del latín aurum, ‘brillante amanecer’).", 
+      "url_logo": "https://image.freepik.com/foto-gratis/macro-mineral-oro-roca-piedra-preciosa_37753-143.jpg", 
+      "price_current": "0.69"
+    },
+    {
+      "id": 4,
+      "item_name": "BANCO SABADELL",
+      "item_code": "B.SABADELL", 
+      "item_description": "Banco Sabadell es un banco español con sede social en Alicante. Además de la sede histórica de Sabadell, la entidad tiene oficinas operativas en San Cugat del Vallés, Barcelona, por todo el territorio de España y capitales de nación de los países que pertenecen a la Eurozona.", 
+      "url_logo": "https://contenidos.infobolsa.es/img/logos/96/M_SAB.png", 
+      "price_current": "0,4350"
+    },
+    {
+      "id": 5,
+      "item_name": "REPSOL",
+      "item_code": "REPSOL", 
+      "item_description": "Repsol es una multinacional energética y petroquímica española, con sede social en Madrid y Barcelona, que fue fundada en octubre de 1987.​", 
+      "url_logo": "https://contenidos.infobolsa.es/img/logos/96/M_REP.png", 
+      "price_current": "6,3780"
+    },
+    {
+      "id": 6,
+      "item_name": "AMADEUS IT GROUP",
+      "item_code": "AMADEUS", 
+      "item_description": "La Amadeus IT Group, frecuentemente conocida como Amadeus, es una empresa proveedora de soluciones tecnológicas para la industria de los viajes. Fue fundada en 1987", 
+      "url_logo": "https://contenidos.infobolsa.es/img/logos/96/M_AMS.png", 
+      "price_current": "41.5602"
+    }
+  ], 
+
+  "prices":[
+    {
+      "id": 1,
+      "price": "5.2510",
+      "item_id": "1", 
+      "date": "19/03/2020"
+    },
+    {
+      "id": 2,
+      "price": "0.4050",
+      "item_id": "2", 
+      "date": "19/03/2020"
+    },
+    {
+      "id": 3,
+      "price": "8.2010",
+      "item_id": "3", 
+      "date": "18/03/2020"
+    },
+    {
+      "id": 4,
+      "price": "8.1050",
+      "item_id": "4", 
+      "date": "18/03/2020"
+    },
+    {
+      "id": 5,
+      "price": "6.1350",
+      "item_id": "5", 
+      "date": "18/03/2020"
+    },
+    {
+      "id": 6,
+      "price": "0.4020",
+      "item_id": "6", 
+      "date": "18/03/2020"
+    }
+  ]
+}
