@@ -4,31 +4,36 @@
       "id": 1,
       "name": "Google",
       "title": "Google LLC is an American multinational technology company...",
-      "value": "88000,00"
+      "value": "88000,00",
+      "logo": "assets/google_logo.png"
     },
     {
       "id": 2,
       "name": "Facebook",
       "title": "Facebook is an American online social media and social networking service...",
-      "value": "76000,00"
+      "value": "76000,00",
+      "logo": "assets/facebook_logo.png"
     },
     {
       "id": 3,
       "name": "Apple",
       "title": "Apple Inc. is an American multinational technology company...",
-      "value": "64000,00"
+      "value": "64000,00",
+      "logo": "assets/apple_logo.png"
     },
     {
       "id": 4,
       "name": "Oracle",
       "title": "Oracle Corporation is an American multinational computer technology corporation...",
-      "value": "52000,00"
+      "value": "52000,00",
+      "logo": "assets/oracle_logo.png"
     },
     {
       "id": 5,
       "name": "Microsoft",
       "title": "Microsoft Corporation is an American multinational technology company...",
-      "value": "40000,00"
+      "value": "40000,00",
+      "logo": "assets/microsoft_logo.png"
     },
     {
       "id": 6,

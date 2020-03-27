@@ -1,8 +1,11 @@
-<div class="card mx-auto my-4" style="width: 38rem;">
-  <img src="assets/nodejs.png" class="card-img-top" alt="logo">
+<div class="row">
+{{#each companies}}
+<div class="card col-md-2 my-4" style="width: 10rem;">
+  <img src="{{this.logo}}" class="card-img-top" alt="logo">
+  <div class="card-title">{{this.name}}</div>
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{this.title}}</p>
   </div>
 </div>
-
-
+{{/each}}
+</div>
