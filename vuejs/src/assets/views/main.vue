@@ -4,9 +4,9 @@
     <div class="d-flex mt-2 mb-2">
       <div class="mr-4 mt-4 container">
         <Content></Content>
-        <div>
-          <Chart></Chart>
-          <Details></Details>
+        <div class="d-flex mt-4 content-box">
+          <Chart class="chart"></Chart>
+          <Details class="details"></Details>
         </div>
       </div>
       <Aside></Aside>
