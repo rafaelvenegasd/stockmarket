@@ -17,13 +17,13 @@ and then the project:
 `npm run dev`
 
 ## Used technology
-- [] VueJs
-- [] Axios
-- [] Json Server
-- [] ChartJs
-- [] SASS
-- [] Webpack
-- [] NPM
+- VueJs
+- Axios
+- Json Server
+- ChartJs
+- SASS
+- Webpack
+- NPM
 
 ## Contributions
 Pull requests are welcome. For suggestions and major changes please contact us in github to discuss the changes.
