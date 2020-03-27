@@ -1,17 +1,29 @@
    
-   <div class="container">
-       <canvas id="myChart"></canvas>
-   </div>
+<div class="container">
+    <canvas id="myChart"></canvas>
+</div>
    
 <script>
 var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
+
+function getTodos() {
+    axios
+      .get("http://localhost:3000/companies?_page=1&_limit=6")
+      .then(res => {
+            let companiesArray = [];
+            res.data.map((item)=>{
+            companiesArray.push(item);
+            console.log(companiesArray);});
+
+    console.log(companiesArray[4].value);
+            
+    let myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['01/01/20', '01/02/20', '01/03/20', '01/04/20', '01/05/20', '01/06/20'],
         datasets: [{
-            label: 'Google',
-            data: [120, 190, 30, 50, 20, 30],
+            label: `${companiesArray[1].name}`,
+            data: [companiesArray[0].value, companiesArray[1].value, companiesArray[2].value, companiesArray[3].value, companiesArray[4].value, companiesArray[5].value],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -31,8 +43,8 @@ var myChart = new Chart(ctx, {
             borderWidth: 1
         },
         {
-            label: 'Microsoft',
-            data: [180, 100, 60, 70, 40, 10],
+            label: `${companiesArray[3].name}`,
+            data: [60033, 50033, 80333, 70333, 50333, 10333],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.6)',
                 'rgba(54, 162, 235, 0.6)',
@@ -67,4 +79,9 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+        })
+      .catch(err => console.error(err))      
+};
+
+getTodos();
 </script>
