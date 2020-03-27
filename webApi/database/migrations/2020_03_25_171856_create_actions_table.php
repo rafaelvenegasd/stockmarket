@@ -17,13 +17,13 @@ class CreateActionsTable extends Migration
             //Id Normal
             $table->bigIncrements('item_id');
             //Name of values / actions / companys
-            $table->string('item_name')->unique(50);
+            $table->string('item_name')->unique();
             //The unique code
-            $table->string('item_code')->unique(50);
+            $table->string('item_code')->unique();
             //Description
             $table->longText('item_description')->min(2000);
             //The logo
-            $table->string('item_logo')->unique(50);
+            $table->string('item_logo')->unique();
             //Price current
             $table->double('price_current', 15, 8)->nullable();
         });
