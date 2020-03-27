@@ -1,0 +1,11 @@
+<div class="row">
+{{#each companies}}
+<div class="card col-md-2 my-4" style="width: 10rem;">
+  <img src="{{this.logo}}" class="card-img-top" alt="logo">
+  <div class="card-title">{{this.name}}</div>
+  <div class="card-body">
+    <p class="card-text">{{this.title}}</p>
+  </div>
+</div>
+{{/each}}
+</div>

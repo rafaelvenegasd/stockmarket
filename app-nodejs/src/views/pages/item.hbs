@@ -1,0 +1,60 @@
+<div class="row">
+{{#each companies}}
+<div class="card mx-auto my-4" style="width: 38rem;">
+  <img src="{{this.logo}}" class="card-img-top" alt="logo">
+  <div class="card-title">{{this.name}}</div>
+  <div class="card-body">
+    <p class="card-text">{{this.title}}</p>
+  </div>
+</div>
+{{/each}}
+</div>
+
+<div class="container">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['01/01/20', '01/02/20', '01/03/20', '01/04/20', '01/05/20', '01/06/20'],
+        datasets: [{
+            label: 'Google',
+            data: [120, 190, 30, 50, 20, 30],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        title: {
+        display:true,
+        text:'Company Prices',
+        fontSize:22
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>

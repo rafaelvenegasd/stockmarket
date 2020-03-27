@@ -1,0 +1,41 @@
+
+<div class="container my-4">
+  <h2>Search</h2>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Write a company" aria-label="Write a company" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary" type="button" id="btnSch">Search</button>
+    </div>
+  </div>
+  
+  <h3 class="my-4">Results</h3>
+  <div id="results" class="row d-none">
+  <div class="card col-md-6" style="width: 18rem;">
+    <img src="assets/nodejs.png" class="card-img-top" alt="logo">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+    
+  <div class="card col-md-6" style="width: 18rem;">
+    <img src="assets/nodejs.png" class="card-img-top" alt="logo">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+var btnSch = document.getElementById('btnSch');
+var results = document.getElementById('results');
+
+btnSch.addEventListener('click', showResults);
+
+function showResults() {
+  results.classList.remove('d-none');
+}
+
+</script>
+

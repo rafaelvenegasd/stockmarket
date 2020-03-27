@@ -1,0 +1,154 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Google",
+      "title": "Google LLC is an American multinational technology company...",
+      "value": 88000,
+      "logo": "assets/google_logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Facebook",
+      "title": "Facebook is an American online social media and social networking service...",
+      "value": 76000,
+      "logo": "assets/facebook_logo.png"
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "title": "Apple Inc. is an American multinational technology company...",
+      "value": 64000,
+      "logo": "assets/apple_logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Oracle",
+      "title": "Oracle Corporation is an American multinational computer technology corporation...",
+      "value": 52000,
+      "logo": "assets/oracle_logo.png"
+    },
+    {
+      "id": 5,
+      "name": "Microsoft",
+      "title": "Microsoft Corporation is an American multinational technology company...",
+      "value": 40000,
+      "logo": "assets/microsoft_logo.png"
+    },
+    {
+      "id": 6,
+      "name": "Audi",
+      "title": "dolorem eum magni eos aperiam quia",
+      "value": 38000
+    },
+    {
+      "id": 7,
+      "name": "BMW",
+      "title": "magnam facilis autem",
+      "value": "34000,00"
+    },
+    {
+      "id": 8,
+      "name": "Ferrari",
+      "title": "dolorem dolore est ipsam",
+      "value": "30000,00"
+    },
+    {
+      "id": 9,
+      "name": "Mercedes",
+      "title": "Apple nesciunt iure omnis dolorem tempora et accusantium",
+      "value": "25000,00"
+    },
+    {
+      "id": 10,
+      "name": "Porsche",
+      "title": "optio molestias id quia eum",
+      "value": "22000,00"
+    },
+    {
+      "id": 11,
+      "name": "nodeJS",
+      "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "value": "15000,00"
+    }
+  ],
+  "prices": [
+    {
+      "id": 1,
+      "title": "doloribus ad provident suscipit at",
+      "price": 1500,
+      "date": "20/01/20",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "title": "doloribus ad provident suscipit at",
+      "price": 1600,
+      "date": "20/02/20",
+      "companyId": 1
+    },
+    {
+      "id": 3,
+      "title": "doloribus ad provident suscipit at",
+      "price": 2500,
+      "date": "20/01/20",
+      "companyId": 2
+    },
+    {
+      "id": 4,
+      "title": "doloribus ad provident suscipit at",
+      "price": 3500,
+      "date": "20/02/20",
+      "companyId": 2
+    },
+    {
+      "id": 5,
+      "title": "doloribus ad provident suscipit at",
+      "price": 500,
+      "date": "10/05/20",
+      "companyId": 3
+    },
+    {
+      "id": 6,
+      "title": "doloribus ad provident suscipit at",
+      "price": 150,
+      "date": "20/06/20",
+      "companyId": 3
+    },
+    {
+      "id": 7,
+      "title": "doloribus ad provident suscipit at",
+      "price": 1800,
+      "date": "20/08/20",
+      "companyId": 4
+    },
+    {
+      "id": 8,
+      "title": "doloribus ad provident suscipit at",
+      "price": 150,
+      "date": "20/09/20",
+      "companyId": 5
+    },
+    {
+      "id": 9,
+      "title": "doloribus ad provident suscipit at",
+      "price": 1500,
+      "date": "20/02/20",
+      "companyId": 6
+    },
+    {
+      "id": 10,
+      "title": "doloribus ad provident suscipit at",
+      "price": 500,
+      "date": "20/04/20",
+      "companyId": 6
+    },
+    {
+      "id": 11,
+      "title": "doloribus ad provident suscipit at",
+      "price": 2000,
+      "date": "01/03/20",
+      "companyId": 9
+    }
+  ]
+}
