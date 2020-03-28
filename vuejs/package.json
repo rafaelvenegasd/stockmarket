@@ -4,6 +4,7 @@
   "description": "vue gallery",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "webpack": "webpack --mode development",
     "dev": "webpack-dev-server --mode development --open",
     "prod": "webpack --mode production"
