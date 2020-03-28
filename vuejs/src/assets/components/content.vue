@@ -1,6 +1,6 @@
 <template>
   <div>
-    <paginate ref="paginator" name = "items" :list = "items" :per = "5">
+    <paginate ref="paginator" name = "items" :list = "items" :per = "3">
       <table class="table">
         <thead>
           <tr>

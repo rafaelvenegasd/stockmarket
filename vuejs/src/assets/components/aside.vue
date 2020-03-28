@@ -3,7 +3,7 @@
     <div class="list-group list-group-flush mb-4" id="list-tab" role="tablist">
       <li class="list-group-item active"><b>Top 5</b></li>
       <div  v-for="item in top5" :key="item.id">
-        <li class="list-group-item d-flex justify-content-between align-items-center " id="list-profile-list" data-toggle="list" role="tab" >
+        <li class="list-group-item d-flex justify-content-between align-items-center" id="list-profile-list" data-toggle="list" role="tab" >
           {{item.item_name}}
           <span class="badge badge-primary badge-pill pl-1 pr-1">{{item.price_current}}</span>
         </li>

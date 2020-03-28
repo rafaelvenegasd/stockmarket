@@ -1,5 +1,5 @@
 <template>
-    <div id="details" class="d-flex details" >
+    <div id="details" class="d-flex" >
         <div v-for="item in items" :key="item.id">
             <span><b>{{ item.item_name }}</b></span>
             <figure>
