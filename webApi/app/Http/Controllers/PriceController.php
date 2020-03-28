@@ -61,11 +61,12 @@ class PriceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($date)
+    public function show($item_id)
     {   
         //Here i need to create a good query for obtain only 
-        $prueba = Price::all();
+        $prueba = Price::where('item_id', $item_id)->orderBy('date')->get(); 
         return $prueba;
+        //return $action[0]->item_id;
     }
 
     /**
