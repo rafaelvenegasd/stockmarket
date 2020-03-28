@@ -1,6 +1,6 @@
 <template>
     <div id="details" class="d-flex" >
-        <div v-for="item in items" :key="item.id">
+        <div v-for="item in items" :key="item.item_id">
             <span><b>{{ item.item_name }}</b></span>
             <figure>
                 <img :src="item.url_logo" alt="" class="logo">
@@ -18,19 +18,19 @@ export default {
     name: "Details", 
     data() {
         return {
-            items: [], 
-            favorites: [], 
-            position: null, 
+            items: [],
+            favorites: [],
+            position: null,
         };
     },
     mounted() {
-        EventBus.$on('searching', id =>{
-            getDetails(id, (err, data) =>{
+        EventBus.$on('searching', name =>{
+            getDetails(name, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 
                 else{
-                    this.items = [data];
+                    this.items = data;
                 }
             })
         })

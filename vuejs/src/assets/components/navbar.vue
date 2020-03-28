@@ -21,8 +21,8 @@ export default {
       }
     },
     methods:{
-        search(id){
-          EventBus.$emit('searching', this.id);
+        search(){
+          EventBus.$emit('searching', this.message);
         }
     }
 }

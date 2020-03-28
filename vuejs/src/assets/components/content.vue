@@ -9,10 +9,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in paginated('items')" :key="item.id">
+          <tr v-for="item in paginated('items')" :key="item.item_id">
             <td>{{item.item_name}}</td>
             <td>{{item.price_current}}</td>
-            <td><button :id=item.id class="btn btn-success btn-sm" v-on:click="getDetails(item.item_name)" >Detail</button></td>
+            <td><button :id=item.item_id class="btn btn-success btn-sm" v-on:click="getDetails(item.item_name)" >Detail</button></td>
           </tr>
         </tbody>
       </table>

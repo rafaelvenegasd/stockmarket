@@ -1,8 +1,8 @@
 
 const axios = require('axios');
 
-export function getDetails(id, cb){
-    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions` + id)
+export function getDetails(name, cb){
+    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions/` + name)
     .then(function (res) {
         cb(null, res.data);
     })
