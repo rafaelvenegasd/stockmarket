@@ -8,10 +8,10 @@ const path = require('path');
 // Connect server
 const app = express();
 
-const server = app.listen(3333, listening);
+const server = app.listen(8080, listening);
 
 function listening() {
-    console.log('Server listening in port 3333');
+    console.log('Server listening in port 8080');
 }
 
 // app.use(express.static('src'));
