@@ -12,7 +12,7 @@
           <tr v-for="item in paginated('items')" :key="item.id">
             <td>{{item.item_name}}</td>
             <td>{{item.price_current}}</td>
-            <td><button :id=item.id class="btn btn-success btn-sm" v-on:click="getDetails(item.id)" >Detail</button></td>
+            <td><button :id=item.id class="btn btn-success btn-sm" v-on:click="getDetails(item.item_name)" >Detail</button></td>
           </tr>
         </tbody>
       </table>
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       paginate:['items'],
-      items: [], id: ''
+      items: [], name: ''
     };
   },
   mounted() {
@@ -46,9 +46,9 @@ export default {
     });
   }, 
   methods:{
-    getDetails(id)
+    getDetails(name)
     {
-      EventBus.$emit('searching', id);
+      EventBus.$emit('searching', name);
     }
   }
 }

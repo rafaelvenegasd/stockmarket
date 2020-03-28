@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 export function getDetails(id, cb){
-    axios.get(`http://localhost:3000/items/` + id)
+    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions` + id)
     .then(function (res) {
         cb(null, res.data);
     })
@@ -14,7 +14,7 @@ export function getDetails(id, cb){
 }
 
 export function getContentFromApi(cb){
-  axios.get(`http://localhost:3000/items/`)
+  axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions`)
   .then(function (res) {
       cb(null, res.data);
   })
