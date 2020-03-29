@@ -31,6 +31,7 @@
 var btnSch = document.getElementById('btnSch');
 var results = document.getElementById('results');
 var ctx = document.getElementById('myChart');
+var logo = document.getElementById('logo').src;
 
 btnSch.addEventListener('click', showResults);
 
@@ -47,6 +48,7 @@ function showResults() {
 
 function getTodos() {
     var inpSch = document.getElementById('inpSch').value;
+    var logo = document.getElementById('logo').src;
     
     axios
       .get("http://localhost:3000/companies?_page=1&_limit=6")
@@ -64,35 +66,35 @@ function getTodos() {
     var companyValue = 0;
 
     if(inpSch === "google") {
-      logo.src = companiesArray[0].logo;
+      logo.src = 'assets/google_logo.png';
       itemName.innerText = companiesArray[0].name;
       itemDescription.innerText = companiesArray[0].title;
       var companyName = companiesArray[0].name;
       var companyValue = companiesArray[0].value;
     }
     if(inpSch === "facebook") {
-      logo.src = companiesArray[1].logo;
+      logo.src = 'assets/facebook_logo.png';
       itemName.innerText = companiesArray[1].name;
       itemDescription.innerText = companiesArray[1].title;
       var companyName = companiesArray[1].name;
       var companyValue = companiesArray[1].value;
     } 
     if(inpSch === "apple") {
-      logo.src = companiesArray[2].logo;
+      logo.src = 'assets/apple_logo.png';
       itemName.innerText = companiesArray[2].name;
       itemDescription.innerText = companiesArray[2].title;
       var companyName = companiesArray[2].name;
       var companyValue = companiesArray[2].value;
     } 
     if(inpSch === "oracle") {
-      logo.src = companiesArray[3].logo;
+      logo.src = 'assets/oracle_logo.png';
       itemName.innerText = companiesArray[3].name;
       itemDescription.innerText = companiesArray[3].title;
       var companyName = companiesArray[3].name;
       var companyValue = companiesArray[3].value;
     } 
     if(inpSch === "microsoft") {
-      logo.src = companiesArray[4].logo;
+      logo.src = 'assets/microsoft_logo.png';
       itemName.innerText = companiesArray[4].name;
       itemDescription.innerText = companiesArray[4].title;
       var companyName = companiesArray[4].name;
