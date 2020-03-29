@@ -8,22 +8,22 @@ var ctx = document.getElementById('myChart');
 
 function getTodos() {
     axios
-      .get("http://localhost:3000/companies?_page=1&_limit=6")
+      .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions")
       .then(res => {
             let companiesArray = [];
             res.data.map((item)=>{
             companiesArray.push(item);
             console.log(companiesArray);});
 
-    console.log(companiesArray[4].value);
+    console.log(companiesArray[4].item_name);
             
     let myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['01/01/20', '01/02/20', '01/03/20', '01/04/20', '01/05/20', '01/06/20'],
         datasets: [{
-            label: `${companiesArray[1].name}`,
-            data: [companiesArray[0].value, companiesArray[1].value, companiesArray[2].value, companiesArray[3].value, companiesArray[4].value, companiesArray[5].value],
+            label: `${companiesArray[1].item_name}`,
+            data: [companiesArray[2].price_current, 25000, 10000, 30000, 20000, 15000],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -43,7 +43,7 @@ function getTodos() {
             borderWidth: 1
         },
         {
-            label: `${companiesArray[3].name}`,
+            label: `${companiesArray[4].item_name}`,
             data: [60033, 50033, 80333, 70333, 50333, 10333],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.6)',
