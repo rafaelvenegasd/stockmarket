@@ -1,9 +1,6 @@
 const express = require('express');
-// const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
-// const flash = require('connect-flash');
-// const session = require('express-session');
 
 // Connect server
 const app = express();
@@ -13,8 +10,6 @@ const server = app.listen(3333, listening);
 function listening() {
     console.log('Server listening in port 3333');
 }
-
-// app.use(express.static('src'));
 
 // Settings
 app.set('views', path.join(__dirname, 'views'));
@@ -28,23 +23,8 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // Middlewares
-// app.use(session({
-//     secret: 'myportfolionodesession',
-//     resave: false,
-//     saveUninitialized: false,
-//     store: new MySQLStore(database)
-// }))
-// app.use(flash());
-// app.use(morgan('dev'));
-// app.use(express.urlencoded({extended: false}));
-// app.use(express.json());
-
-
-// Global Variables
-// app.use((req, res, next) => {
-//     app.locals.success = req.flash('success');
-//     next();
-// })
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // Routes 
 app.use('/', require('./controllers/dashboard'));
