@@ -24,7 +24,8 @@ router.get(`/:id`, (req, res, next) => {
         response.data.map((item)=>{
             companiesArray.push(item);
         });
-        res.render('pages/item', { companies: companiesArray });  
+        res.render('pages/item', { companies: companiesArray });
+          
     })
     .catch(err => console.error(err)) 
 });
