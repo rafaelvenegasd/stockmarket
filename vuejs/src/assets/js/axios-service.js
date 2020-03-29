@@ -7,7 +7,6 @@ export function getDetails(name, cb){
         cb(null, res.data);
     })
     .catch(function (error) {
-        // handle error
         console.log(error);
         cb(error, null);
     })
@@ -23,4 +22,15 @@ export function getContentFromApi(cb){
       cb(error, null);
   })
 }
+
+export function getValues(id, cb){
+    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actualprices/`+ id)
+    .then(function (res) {
+        cb(null, res.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+        cb(error, null);
+    })
+  }
 

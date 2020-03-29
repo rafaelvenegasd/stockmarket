@@ -1,17 +1,16 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <div class="d-flex mt-2 mb-2">
-      <div class="mr-4 mt-4 container">
+    <div class="d-flex mt-2 mb-2 container">
+      <div class="mr-4 mt-4">
         <Content></Content>
-        <div class="d-flex mt-4 content-box">
-          <Chart class="chart"></Chart>
-          <Details class="details"></Details>
+        <div class="d-flex mt-4 content-box row">
+          <Chart class="chart col-lg"></Chart>
+          <Details class="details col-sm"></Details>
         </div>
       </div>
-      <Aside></Aside>
+      <Aside class="d-sm-none d-md-block"></Aside>
     </div>
-    
     <Footer></Footer>
   </div>
 </template>
