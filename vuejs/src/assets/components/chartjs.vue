@@ -29,6 +29,7 @@ export default {
                     for (let i = 0; i < data.length; i++) {
                         this.values.push(data[i].price_quantity);
                     }
+                    console.log(data)
                 }
                 const chart = this.$refs.chart;
                 const ctx = chart.getContext("2d");

@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 export function getDetails(name, cb){
-    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions/` + name)
+    axios.get(`https://assembler-stock-market-webapi.herokuapp.com/api/actions/` + name)
     .then(function (res) {
         cb(null, res.data);
     })
@@ -13,7 +13,7 @@ export function getDetails(name, cb){
 }
 
 export function getContentFromApi(cb){
-  axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actions`)
+  axios.get(`https://assembler-stock-market-webapi.herokuapp.com/api/actions`)
   .then(function (res) {
       cb(null, res.data);
   })
@@ -24,7 +24,7 @@ export function getContentFromApi(cb){
 }
 
 export function getValues(id, cb){
-    axios.get(`http://assembler-stock-market-webapi.herokuapp.com/api/actualprices/`+ id)
+    axios.get(`https://assembler-stock-market-webapi.herokuapp.com/api/actualprices/`+ id)
     .then(function (res) {
         cb(null, res.data);
     })

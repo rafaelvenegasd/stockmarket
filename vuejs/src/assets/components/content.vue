@@ -50,7 +50,6 @@ export default {
     {
       EventBus.$emit('searching', name);
       EventBus.$emit('chart', id);
-      console.log(id);
     }
   }
 }
