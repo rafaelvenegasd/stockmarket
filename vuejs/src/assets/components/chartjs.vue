@@ -26,6 +26,7 @@ export default {
                     console.error(err)
                 } 
                 else{
+                    this.values = [];
                     for (let i = 0; i < data.length; i++) {
                         this.values.push(data[i].price_quantity);
                     }
@@ -33,6 +34,10 @@ export default {
                 }
                 const chart = this.$refs.chart;
                 const ctx = chart.getContext("2d");
+                if (myChart) {
+	                myChart.clear();
+                    myChart.destroy();
+                }
                 const myChart = new Chart(ctx, {
                     type: 'line',
                     data: {

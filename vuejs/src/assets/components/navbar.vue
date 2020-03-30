@@ -12,6 +12,7 @@
 
 <script>
 import EventBus from '../js/event-bus'
+import {getDetails} from '../js/axios-service'
 export default {
     name: "Navbar",
     data() {
@@ -22,7 +23,17 @@ export default {
     },
     methods:{
         search(){
-          EventBus.$emit('searching', this.message);
+          getDetails(this.message, (err, data) =>{
+                if(err){
+                    console.error(err)
+                } 
+                else{
+                    this.id = data[0].item_id;
+                    EventBus.$emit('searching', this.message);
+                    EventBus.$emit('chart', this.id);
+                }
+            })
+
         }
     }
 }

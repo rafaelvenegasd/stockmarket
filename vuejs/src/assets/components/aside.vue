@@ -23,7 +23,7 @@
 
 <script>
 import EventBus from '../js/event-bus'
-import {getContentFromApi} from '../js/axios-service'
+import {getTop5} from '../js/axios-service'
 export default {
     name: "Aside",
     data() {
@@ -39,7 +39,7 @@ export default {
         this.favoritesItems = JSON.parse(this.favoritesItems);
       });
 
-      getContentFromApi((err, data) =>{
+      getTop5((err, data) =>{
         if(err){
           console.error(err)
         } 

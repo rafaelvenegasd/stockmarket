@@ -20,6 +20,7 @@ export default {
         return {
             items: [],
             favorites: [],
+            id: '',
             position: null,
         };
     },
@@ -45,7 +46,7 @@ export default {
             if (this.position != -1) { this.favorites.splice(this.position, 1); // if the element exist, remove the element
             } else { this.favorites.push(item); } // else add to Favorites
             localStorage.setItem("favorites", JSON.stringify(this.favorites));
-            EventBus.$emit('favorites', this.favorites);
+            EventBus.$emit('favorites', JSON.stringify(this.favorites));
         }
     }         
 }
