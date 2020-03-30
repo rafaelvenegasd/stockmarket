@@ -37,8 +37,14 @@ function showItem() {
             pricesArray.push(item);
           });
         
-        var prices = [pricesArray[0].price_quantity, pricesArray[1].price_quantity, pricesArray[2].price_quantity, pricesArray[3].price_quantity, pricesArray[4].price_quantity, pricesArray[5].price_quantity]
+        var prices = [pricesArray[0].price_quantity, pricesArray[1].price_quantity, pricesArray[2].price_quantity, pricesArray[3].price_quantity, pricesArray[4].price_quantity]
         console.log(prices);
+
+        var hour = [pricesArray[0].date.hour, pricesArray[1].date.hour, pricesArray[2].date.hour, pricesArray[3].date.hour, pricesArray[4].date.hour] 
+        console.log(hour);
+
+        var date = pricesArray[0].date.year;
+        console.log(date);
 
     axios
       .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions")
@@ -48,49 +54,45 @@ function showItem() {
               companiesArray.push(item);
             });
     
+
     if(id === "1") {
       logo.src = companiesArray[0].item_logo;
       itemName.innerText = companiesArray[0].item_name;
       itemDescription.innerText = companiesArray[0].item_description;
       var companyName = companiesArray[0].item_name;
-      var companyValue = prices;
     }
     if(id === "11") {
       logo.src = companiesArray[1].item_logo;
       itemName.innerText = companiesArray[1].item_name;
       itemDescription.innerText = companiesArray[1].item_description;
       var companyName = companiesArray[1].item_name;
-      var companyValue = prices;
     } 
     if(id === "21") {
       logo.src = companiesArray[2].item_logo;
       itemName.innerText = companiesArray[2].item_name;
       itemDescription.innerText = companiesArray[2].item_description;
       var companyName = companiesArray[2].item_name;
-      var companyValue = prices;
     } 
     if(id === "31") {
       logo.src = companiesArray[3].item_logo;
       itemName.innerText = companiesArray[3].item_name;
       itemDescription.innerText = companiesArray[3].item_description;
       var companyName = companiesArray[3].item_name;
-      var companyValue = prices;
     } 
     if(id === "41") {
       logo.src = companiesArray[4].item_logo;
       itemName.innerText = companiesArray[4].item_name;
       itemDescription.innerText = companiesArray[4].item_description;
       var companyName = companiesArray[4].item_name;
-      var companyValue = prices;
     }
 
 
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['01/01/20', '01/02/20', '01/03/20', '01/04/20', '01/05/20', '01/06/20'],
+        labels: hour,
         datasets: [{
-            label: companyName,
+            label: date,
             data: prices,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -114,7 +116,7 @@ var myChart = new Chart(ctx, {
     options: {
         title: {
         display:true,
-        text:'Company Prices',
+        text: companyName,
         fontSize:22
         },
         scales: {
