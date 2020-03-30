@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Price;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Action;
 
 use Carbon\Carbon;
@@ -19,7 +21,37 @@ class PriceController extends Controller
      */
     public function index()
     {
-        //
+        //Object with the actual date
+        $now = new Carbon;
+        //This is a query for take all the prices from 1 year
+        $price = DB::table('prices')
+        ->where('date','<', $now)
+        ->where('date','>', Carbon::now()->subYears(1))
+        ->orderBy('date')
+        ->get();
+        //List all prices registered for a date range (maximum 1 year)
+        $priceSend = [];
+        foreach ($price as $jsonPrice) {
+            $date= explode(" ", $jsonPrice->date);
+            if(count($date) == 2) {
+                $jsonDate = [
+                    'year' => $date[0],
+                    'hour' => $date[1],
+                ];
+                
+            }
+            else {
+                $jsonDate = "Error";
+            }
+            $json = [
+                'price_id' => $jsonPrice->price_id,
+                'item_id' => $jsonPrice->item_id,
+                'price_quantity' => $jsonPrice->price_quantity,
+                'date' => $jsonDate,
+            ];
+            array_push($priceSend , $json);
+        }
+        return $priceSend;
     }
 
     /**
@@ -43,6 +75,9 @@ class PriceController extends Controller
         //Date now
         $now = new Carbon;
         $toSave = json_encode($now);
+        $toSave = str_replace("T", " ", $toSave);
+        $toSave = str_replace("Z", "", $toSave);
+        $toSave = str_replace('"', "", $toSave);
         //Instantiated the Price class
         $price = new Price;
         //We declare the name with the name sent in the request
@@ -63,10 +98,30 @@ class PriceController extends Controller
      */
     public function show($item_id)
     {   
-        //Here i need to create a good query for obtain only 
-        $prueba = Price::where('item_id', $item_id)->orderBy('date')->get(); 
-        return $prueba;
-        //return $action[0]->item_id;
+        //Object with the actual date
+        $now = new Carbon;
+        //List all prices registered for a date range (maximum 1 year)
+        $price = Price::where('item_id', $item_id)
+        ->where('date','<', $now)
+        ->where('date','>', Carbon::now()->subYears(1))
+        ->orderBy('date')
+        ->get();
+        $priceSend = [];
+        foreach ($price as $jsonPrice) {
+            $date= explode(" ", $jsonPrice->date);
+            $jsonDate = [
+                'year' => $date[0],
+                'hour' => $date[1],
+            ];
+            $json = [
+                'price_id' => $jsonPrice->price_id,
+                'item_id' => $jsonPrice->item_id,
+                'price_quantity' => $jsonPrice->price_quantity,
+                'date' => $jsonDate,
+            ];
+            array_push($priceSend , $json);
+        }
+        return $priceSend;
     }
 
     /**
@@ -87,9 +142,13 @@ class PriceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $price_id)
     {
-        //
+        //Update data
+        $price = Price::where("price_id", $price_id)->update([
+            "price_quantity" => $request->price_quantity,
+            "date" => $request->date,
+        ]);
     }
 
     /**
@@ -98,8 +157,10 @@ class PriceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+
+    public function destroy($price_id)
+    {   //Delete data
+        $price = Price::where('price_id' , $price_id);
+        $price->delete();
     }
 }
