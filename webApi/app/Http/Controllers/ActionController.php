@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
+use App\Price;
+
+use Carbon\Carbon;
+
 use App\Action;
 
 class ActionController extends Controller
@@ -56,10 +62,31 @@ class ActionController extends Controller
      */
 
     //This is my function show
-    public function show($item_name)
+    public function show($data)
     {
-        // We ask the model for the Action with the name requested by GET.
-        return Action::where('item_name', $item_name)->get();
+        if ($data == "topactualprices") {
+            $top=[];
+            $actions = DB::table('actions')->get();
+            foreach ($actions as $action)
+            {
+                $actualPrices = Price::where('item_id', $action->item_id)->orderBy('date')->get();
+                
+                foreach($actualPrices as $actualPrice){
+
+                }
+
+            }
+            return $top;
+        } else {
+            if(is_numeric ( $data ))
+            {
+                //If you search by id
+                return Action::where('item_id', $data)->get();
+            }else {
+                // We ask the model for the Action with the name requested by GET.
+                return Action::where('item_name', $data)->get();
+            }
+        }
     }
 
     /**

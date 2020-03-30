@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Price;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Action;
 
 use Carbon\Carbon;
@@ -19,7 +21,30 @@ class PriceController extends Controller
      */
     public function index()
     {
-        //
+        $price = DB::table('prices')->orderBy('date')->get();
+        //List all prices registered for a date range (maximum 1 year)
+        $priceSend = [];
+        foreach ($price as $jsonPrice) {
+            $date= explode(" ", $jsonPrice->date);
+            if(count($date) == 2) {
+                $jsonDate = [
+                    'year' => $date[0],
+                    'hour' => $date[1],
+                ];
+                
+            }
+            else {
+                $jsonDate = "Error";
+            }
+            $json = [
+                'price_id' => $jsonPrice->price_id,
+                'item_id' => $jsonPrice->item_id,
+                'price_quantity' => $jsonPrice->price_quantity,
+                'date' => $jsonDate,
+            ];
+            array_push($priceSend , $json);
+        }
+        return $priceSend;
     }
 
     /**
@@ -43,6 +68,9 @@ class PriceController extends Controller
         //Date now
         $now = new Carbon;
         $toSave = json_encode($now);
+        $toSave = str_replace("T", " ", $toSave);
+        $toSave = str_replace("Z", "", $toSave);
+        $toSave = str_replace('"', "", $toSave);
         //Instantiated the Price class
         $price = new Price;
         //We declare the name with the name sent in the request
@@ -63,10 +91,24 @@ class PriceController extends Controller
      */
     public function show($item_id)
     {   
-        //Here i need to create a good query for obtain only 
-        $prueba = Price::where('item_id', $item_id)->orderBy('date')->get(); 
-        return $prueba;
-        //return $action[0]->item_id;
+        //List all prices registered for a date range (maximum 1 year)
+        $price = Price::where('item_id', $item_id)->orderBy('date')->get();
+        $priceSend = [];
+        foreach ($price as $jsonPrice) {
+            $date= explode(" ", $jsonPrice->date);
+            $jsonDate = [
+                'year' => $date[0],
+                'hour' => $date[1],
+            ];
+            $json = [
+                'price_id' => $jsonPrice->price_id,
+                'item_id' => $jsonPrice->item_id,
+                'price_quantity' => $jsonPrice->price_quantity,
+                'date' => $jsonDate,
+            ];
+            array_push($priceSend , $json);
+        }
+        return $priceSend;
     }
 
     /**
