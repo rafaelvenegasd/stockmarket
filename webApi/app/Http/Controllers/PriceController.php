@@ -153,8 +153,10 @@ class PriceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    public function destroy($price_id)
     {
-        //
+        $price = Price::where('price_id' , $price_id);
+        $price->delete();
     }
 }

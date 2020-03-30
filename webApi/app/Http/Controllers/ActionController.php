@@ -163,8 +163,12 @@ class ActionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+
+    public function destroy($item_id)
     {
-        //
+        $action = Action::where( 'item_id' , $item_id);
+        $prices = Price::where('item_id' , $item_id);
+        $prices->delete();
+        $action->delete();
     }
 }
