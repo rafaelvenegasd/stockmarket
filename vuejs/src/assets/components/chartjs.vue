@@ -16,7 +16,8 @@ export default {
     data() {
         return {
             values: [], 
-            label: 'Item'
+            labels: [], 
+            label: ''
         };
     },
     mounted() {
@@ -27,10 +28,12 @@ export default {
                 } 
                 else{
                     this.values = [];
+                    this.labels = [];
+                    this.label = data[0].date.year;
                     for (let i = 0; i < data.length; i++) {
                         this.values.push(data[i].price_quantity);
+                        this.labels.push(data[i].date.hour)
                     }
-                    console.log(data)
                 }
                 const chart = this.$refs.chart;
                 const ctx = chart.getContext("2d");
@@ -41,7 +44,7 @@ export default {
                 const myChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: this.values,
+                        labels: this.labels,
                         datasets: [{
                             label: this.label,
                             data: this.values,
