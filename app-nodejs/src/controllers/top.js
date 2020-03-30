@@ -4,7 +4,7 @@ const axios = require('axios');
 
 router.get('/', (req, res, next) => {
     axios
-    .get("http://localhost:3000/companies?_page=1&_limit=5")
+    .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions")
     .then((response) => {
         let companiesArray = [];
         response.data.map((top)=>{

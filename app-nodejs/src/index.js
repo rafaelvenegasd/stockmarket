@@ -33,7 +33,6 @@ app.use('/products', require('./controllers/products'));
 app.use('/top', require('./controllers/top'));
 app.use('/search', require('./controllers/search'));
 app.use('/contact', require('./controllers/contact'));
-app.use('/chart', require('./controllers/chart'));
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));

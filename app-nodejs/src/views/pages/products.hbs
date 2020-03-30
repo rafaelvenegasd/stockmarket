@@ -1,11 +1,13 @@
+<div class="container">
 <div class="row">
 {{#each companies}}
-<div class="card col-md-2 my-4" style="width: 10rem;">
-  <img src="{{this.logo}}" class="card-img-top" alt="logo">
-  <div class="card-title">{{this.name}}</div>
+<div class="card col-md-2 my-4 mr-4" style="width: 28rem;">
+  <img src="{{this.item_logo}}" class="card-img-top" alt="logo">
   <div class="card-body">
-    <p class="card-text">{{this.title}}</p>
+    <div class="card-title font-weight-bold">{{this.item_name}}</div>
+    <p class="card-text">{{this.item_description}}</p>
   </div>
 </div>
 {{/each}}
+</div>
 </div>

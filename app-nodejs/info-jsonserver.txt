@@ -21,3 +21,11 @@ http://localhost:3000/prices?price_gte=1000&price_lte=3000
 
 FULL TEXT SEARCH
 http://localhost:3000/companies?q=Apple
+
+
+WebApi Prices
+Facebook = [88000, 135400, 115400, 65300, 152600, 160200]
+Google = [128000, 55400, 85300, 132300, 102600, 140300]
+Apple = [158000, 75400, 100300, 62300, 52600, 121300]
+Oracle = [58000, 105400, 80300, 92300, 122600, 81500]
+Microsoft = [110000, 125400, 135300, 52300, 72600, 61500] 
