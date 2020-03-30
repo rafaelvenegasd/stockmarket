@@ -21,7 +21,14 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $price = DB::table('prices')->orderBy('date')->get();
+        //Object with the actual date
+        $now = new Carbon;
+        //This is a query for take all the prices from 1 year
+        $price = DB::table('prices')
+        ->where('date','<', $now)
+        ->where('date','>', Carbon::now()->subYears(1))
+        ->orderBy('date')
+        ->get();
         //List all prices registered for a date range (maximum 1 year)
         $priceSend = [];
         foreach ($price as $jsonPrice) {
@@ -91,8 +98,14 @@ class PriceController extends Controller
      */
     public function show($item_id)
     {   
+        //Object with the actual date
+        $now = new Carbon;
         //List all prices registered for a date range (maximum 1 year)
-        $price = Price::where('item_id', $item_id)->orderBy('date')->get();
+        $price = Price::where('item_id', $item_id)
+        ->where('date','<', $now)
+        ->where('date','>', Carbon::now()->subYears(1))
+        ->orderBy('date')
+        ->get();
         $priceSend = [];
         foreach ($price as $jsonPrice) {
             $date= explode(" ", $jsonPrice->date);
