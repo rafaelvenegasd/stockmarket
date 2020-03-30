@@ -11,11 +11,11 @@
   <tbody>
   {{#each companies}}
     <tr>
-      <th scope="row">{{this.id}}</th>
-      <td>{{this.name}}</td>
-      <td>{{this.title}}</td>
-      <td>€{{this.value}}</td>
-      <td><a href="/products/{{this.id}}">Details</a></td>
+      <th scope="row">{{this.item_id}}</th>
+      <td>{{this.item_name}}</td>
+      <td>{{this.item_description}}</td>
+      <td>€ {{this.price_current}}</td>
+      <td><a href="/products/{{this.item_id}}">Details</a></td>
     </tr>
   {{/each}}
   </tbody>

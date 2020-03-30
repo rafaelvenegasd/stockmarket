@@ -2,7 +2,7 @@
 <div class="container my-4">
   <h2>Search</h2>
   <div class="input-group mb-3">
-    <input id="inpSch" type="text" class="form-control" placeholder="Write a company">
+    <input id="inpSch" type="text" class="form-control mr-2" placeholder="Write a company">
     <div class="input-group-append">
       <button class="btn btn-outline-primary" type="button" id="btnSch">Search</button>
     </div>
@@ -11,10 +11,10 @@
   <h3 class="my-4">Results</h3>
   
   <div id="results" class="row d-none">
-  <div class="card col-md-6" style="width: 18rem;">
+  <div class="card col-md-4 mr-4" style="width: 18rem;">
     <img  id="logo" src="" class="card-img-top" alt="">
     <div class="card-body">
-      <div id="itemName" class="card-title"></div>
+      <div id="itemName" class="card-title font-weight-bold"></div>
       <p id="itemDescription" class="card-text"></p>
     </div>
   </div>
@@ -48,64 +48,91 @@ function showResults() {
 function getTodos() {
     var inpSch = document.getElementById('inpSch').value;
     
-    axios
-      .get("http://localhost:3000/companies?_page=1&_limit=6")
-      .then(res => {
-            var companiesArray = [];
-            res.data.map((item)=>{
-            companiesArray.push(item);
-            });
+    if(inpSch === "facebook"){
+      var id = 1;  
+    }
+    if(inpSch === "google"){
+      var id = 11;  
+    }
+    if(inpSch === "apple"){
+      var id = 21;  
+    }
+    if(inpSch === "oracle"){
+      var id = 31;  
+    }
+    if(inpSch === "microsoft"){
+      var id = 41;  
+    }
+    
+  axios
+    .get(`https://assembler-stock-market-webapi.herokuapp.com/api/actualprices/${id}`)
+    .then(res => {
+        var pricesArray = [];
+          res.data.map((item)=>{
+            pricesArray.push(item);
+          });
+        
+        var prices = [pricesArray[0].price_quantity, pricesArray[1].price_quantity, pricesArray[2].price_quantity, pricesArray[3].price_quantity, pricesArray[4].price_quantity]
+        
+        var hour = [pricesArray[0].date.hour, pricesArray[1].date.hour, pricesArray[2].date.hour, pricesArray[3].date.hour, pricesArray[4].date.hour] 
+        console.log(hour);
+
+        var date = pricesArray[0].date.year;
+        console.log(date);
+
+  axios
+    .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions")
+    .then(res => {
+          var companiesArray = [];
+          res.data.map((item)=>{
+          companiesArray.push(item);
+          });
     
     // Change data of company card and chartjs with search input
     var logo = document.getElementById('logo');
     var itemName = document.getElementById('itemName');
     var itemDescription = document.getElementById('itemDescription');
     var companyName = ""; 
-    var companyValue = 0;
+    var companyValue = prices;
 
-    if(inpSch === "google") {
-      logo.src = companiesArray[0].logo;
-      itemName.innerText = companiesArray[0].name;
-      itemDescription.innerText = companiesArray[0].title;
-      var companyName = companiesArray[0].name;
-      var companyValue = companiesArray[0].value;
-    }
     if(inpSch === "facebook") {
-      logo.src = companiesArray[1].logo;
-      itemName.innerText = companiesArray[1].name;
-      itemDescription.innerText = companiesArray[1].title;
-      var companyName = companiesArray[1].name;
-      var companyValue = companiesArray[1].value;
+      logo.src = companiesArray[0].item_logo;
+      itemName.innerText = companiesArray[0].item_name;
+      itemDescription.innerText = companiesArray[0].item_description;
+      var companyName = companiesArray[0].item_name;
+    }
+    if(inpSch === "google") {
+      logo.src = companiesArray[1].item_logo;
+      itemName.innerText = companiesArray[1].item_name;
+      itemDescription.innerText = companiesArray[1].item_description;
+      var companyName = companiesArray[1].item_name;
     } 
     if(inpSch === "apple") {
-      logo.src = companiesArray[2].logo;
-      itemName.innerText = companiesArray[2].name;
-      itemDescription.innerText = companiesArray[2].title;
-      var companyName = companiesArray[2].name;
-      var companyValue = companiesArray[2].value;
+      logo.src = companiesArray[2].item_logo;
+      itemName.innerText = companiesArray[2].item_name;
+      itemDescription.innerText = companiesArray[2].item_description;
+      var companyName = companiesArray[2].item_name;
     } 
     if(inpSch === "oracle") {
-      logo.src = companiesArray[3].logo;
-      itemName.innerText = companiesArray[3].name;
-      itemDescription.innerText = companiesArray[3].title;
-      var companyName = companiesArray[3].name;
-      var companyValue = companiesArray[3].value;
+      logo.src = companiesArray[3].item_logo;
+      itemName.innerText = companiesArray[3].item_name;
+      itemDescription.innerText = companiesArray[3].item_description;
+      var companyName = companiesArray[3].item_name;
     } 
     if(inpSch === "microsoft") {
-      logo.src = companiesArray[4].logo;
-      itemName.innerText = companiesArray[4].name;
-      itemDescription.innerText = companiesArray[4].title;
-      var companyName = companiesArray[4].name;
-      var companyValue = companiesArray[4].value;
+      logo.src = companiesArray[4].item_logo;
+      itemName.innerText = companiesArray[4].item_name;
+      itemDescription.innerText = companiesArray[4].item_description;
+      var companyName = companiesArray[4].item_name;
     }
             
     let myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['01/01/20', '01/02/20', '01/03/20', '01/04/20', '01/05/20', '01/06/20'],
+        labels: hour,
         datasets: [{
-            label: companyName,
-            data: [companyValue, companiesArray[1].value, companiesArray[2].value, companiesArray[3].value, companiesArray[4].value, companiesArray[5].value],
+            label: date,
+            data: prices,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -128,7 +155,7 @@ function getTodos() {
     options: {
         title: {
         display:true,
-        text:'Company Price',
+        text: companyName,
         fontSize:22
         },
         scales: {
@@ -141,6 +168,8 @@ function getTodos() {
     }
 });
         })
+      .catch(err => console.error(err))
+    })
       .catch(err => console.error(err))      
 };
 </script>

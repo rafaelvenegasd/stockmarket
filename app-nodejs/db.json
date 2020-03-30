@@ -3,37 +3,37 @@
     {
       "id": 1,
       "name": "Google",
-      "title": "Google LLC is an American multinational technology company...",
+      "title": "Google LLC is an American multinational technology company.",
       "value": 88000,
-      "logo": "https://blogs.unsw.edu.au/nowideas/files/2018/08/historia-logotipo-google.jpg"
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA4oafhxim3Q8qp3EGaXu8c2p8_kJ3tb8ugp6QX6ysp6JvGU3u"
     },
     {
       "id": 2,
       "name": "Facebook",
-      "title": "Facebook is an American online social media and social networking service...",
+      "title": "Facebook is an American online social media and social networking service.",
       "value": 76000,
-      "logo": "assets/facebook_logo.png"
+      "logo": "https://i.pinimg.com/originals/58/f4/72/58f4723d8f23906bdcb058604075ad2a.png"
     },
     {
       "id": 3,
       "name": "Apple",
-      "title": "Apple Inc. is an American multinational technology company...",
+      "title": "Apple Inc. is an American multinational technology company.",
       "value": 64000,
-      "logo": "assets/apple_logo.png"
+      "logo": "https://i.pinimg.com/originals/a5/b5/6a/a5b56a0f683585b38e4eccb3ee0d6c97.png"
     },
     {
       "id": 4,
       "name": "Oracle",
-      "title": "Oracle Corporation is an American multinational computer technology corporation...",
+      "title": "Oracle Corporation is an American multinational computer technology corporation.",
       "value": 52000,
-      "logo": "assets/oracle_logo.png"
+      "logo": "https://img0cf.b8cdn.com/images/logo/00/0_logo_1554204213.png"
     },
     {
       "id": 5,
       "name": "Microsoft",
-      "title": "Microsoft Corporation is an American multinational technology company...",
+      "title": "Microsoft Corporation is an American multinational technology company.",
       "value": 40000,
-      "logo": "assets/microsoft_logo.png"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png"
     },
     {
       "id": 6,
