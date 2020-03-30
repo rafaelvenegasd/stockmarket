@@ -142,9 +142,13 @@ class PriceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $price_id)
     {
-        //
+        //Update data
+        $price = Price::where("price_id", $price_id)->update([
+            "price_quantity" => $request->price_quantity,
+            "date" => $request->date,
+        ]);
     }
 
     /**
@@ -155,7 +159,7 @@ class PriceController extends Controller
      */
 
     public function destroy($price_id)
-    {
+    {   //Delete data
         $price = Price::where('price_id' , $price_id);
         $price->delete();
     }

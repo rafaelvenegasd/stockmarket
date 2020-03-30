@@ -152,9 +152,15 @@ class ActionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $item_id)
     {
-        //
+        //Update data
+        $price = Action::where("item_id", $item_id)->update([
+            "item_name" => $request->item_name,
+            "item_code" => $request->item_code,
+            "item_description" => $request->item_description,
+            "item_logo" => $request->item_logo,
+        ]);
     }
 
     /**
