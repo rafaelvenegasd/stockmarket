@@ -4,7 +4,7 @@ const axios = require('axios');
 
 router.get('/', (req, res, next) => {
     axios
-    .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions")
+    .get("https://assembler-stock-market-webapi.herokuapp.com/api/actions/topactualprices")
     .then((response) => {
         let companiesArray = [];
         response.data.map((top)=>{
